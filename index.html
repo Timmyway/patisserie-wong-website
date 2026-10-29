@@ -1,216 +1,1003 @@
 <!doctype html>
 <html lang="fr">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Patisserie Wong by chef Sasandy — Pâtisserie à Tamatave</title>
-<meta name="description" content="Gâteaux traditionnels, modernes et personnalisés, cocktails et service traiteur à Tamatave. Patisserie Wong by chef Sasandy.">
-<meta property="og:title" content="Patisserie Wong — Tamatave">
-<meta property="og:description" content="Gâteaux personnalisés, gâteaux modernes et service traiteur pour tous vos événements.">
-<meta property="og:image" content="img/angela.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23b3213f'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Georgia' font-style='italic'%3EW%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap">
-<style>
-:root{--cream:#fbf6ef;--blush:#f4e3dc;--cocoa:#2d1a14;--soft:#6b564d;--berry:#b3213f;--berry-d:#8f1832;--line:#e6d6cb;
---serif:"Fraunces",Georgia,"Times New Roman",serif;--sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
-@media(prefers-color-scheme:dark){:root{color-scheme:light}}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:5rem;padding-top:env(safe-area-inset-top,0px)}
-body{background:var(--cream);color:var(--cocoa);font:400 1.0625rem/1.65 var(--sans);overflow-x:hidden}
-img{display:block;max-width:100%}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--berry);outline-offset:3px}
-.wrap{width:min(1180px,100% - 2.5rem);margin-inline:auto}
-h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacing:-.015em}
-h2{font-size:clamp(2rem,4.5vw,3.25rem)}
-em{font-style:italic;color:var(--berry)}
-.eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--berry);margin-bottom:1rem}
-.btn{display:inline-block;padding:.9rem 1.6rem;border-radius:3px;background:var(--berry);color:#fff;text-decoration:none;font-weight:600;font-size:.95rem;border:1.5px solid var(--berry);transition:background .2s,color .2s;min-height:48px}
-.btn:hover{background:var(--berry-d)}
-.btn.ghost{background:transparent;color:var(--cocoa);border-color:var(--cocoa)}
-.btn.ghost:hover{background:var(--cocoa);color:var(--cream)}
-header{position:sticky;top:0;z-index:20;background:rgba(251,246,239,.96);border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;justify-content:space-between;height:4.25rem;gap:1rem}
-.brand{font-family:var(--serif);font-style:italic;font-size:1.65rem;color:var(--berry);text-decoration:none}
-.brand small{font:500 .62rem var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-left:.5rem}
-nav ul{display:flex;gap:1.75rem;list-style:none;padding:0;align-items:center}
-nav a{text-decoration:none;font-size:.95rem;font-weight:500}
-nav a:hover{color:var(--berry)}
-nav .btn{padding:.55rem 1.1rem;min-height:0;color:#fff}
-nav .btn:hover{color:#fff}
-.burger{display:none;background:none;border:1px solid var(--line);border-radius:3px;width:48px;height:48px;font:inherit;cursor:pointer}
-.hero{padding:clamp(2rem,6vw,5rem) 0 clamp(3rem,7vw,6rem)}
-.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,5rem);align-items:center}
-.hero h1{font-size:clamp(2.7rem,6.6vw,5.4rem);margin-bottom:1.5rem}
-.hero p.lead{font-size:1.2rem;color:var(--soft);max-width:30rem;margin-bottom:2rem}
-.cta{display:flex;gap:.9rem;flex-wrap:wrap}
-.hero-img{position:relative;padding:0 0 2.5rem 2.5rem}
-.hero-img::before{content:"";position:absolute;inset:2.5rem 2.5rem 0 0;background:var(--blush);border-radius:3px}
-.hero-img .main{position:relative;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:3px;box-shadow:0 18px 40px -22px rgba(45,26,20,.5)}
-.hero-img .inset{position:absolute;left:0;bottom:0;width:38%;aspect-ratio:1;object-fit:cover;border:6px solid var(--cream);border-radius:3px}
-section{padding:clamp(3.5rem,8vw,7rem) 0}
-.story .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,6vw,6rem);align-items:center}
-.story img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:3px}
-.story p{color:var(--soft);margin-top:1.25rem;max-width:34rem}
-.services{list-style:none;padding:0;margin-top:1.75rem;border-top:1px solid var(--line)}
-.services li{padding:.8rem 0;border-bottom:1px solid var(--line);font-family:var(--serif);font-size:1.25rem}
-.services span{font:400 .9rem var(--sans);color:var(--soft);display:block}
-.sig{background:var(--blush)}
-.sig header,.head{max-width:36rem;margin-bottom:2.5rem}
-.sig-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1.25rem}
-.card{margin:0;position:relative;overflow:hidden;border-radius:3px;background:#fff}
-.card img{width:100%;height:100%;object-fit:cover;aspect-ratio:1}
-.card figcaption{position:absolute;left:0;right:0;bottom:0;padding:2.5rem 1rem .9rem;color:#fff;font-size:.9rem;background:linear-gradient(transparent,rgba(45,26,20,.72))}
-.c1{grid-column:span 7;grid-row:span 2}.c1 img{aspect-ratio:auto}
-.c2,.c3{grid-column:span 5}
-.c4,.c5,.c6{grid-column:span 4}
-.gallery-grid{columns:4 220px;column-gap:1rem}
-.gallery-grid button{display:block;width:100%;padding:0;border:0;background:none;margin-bottom:1rem;cursor:zoom-in;break-inside:avoid;border-radius:3px;overflow:hidden}
-.gallery-grid img{width:100%;height:auto;transition:transform .5s}
-.gallery-grid button:hover img{transform:scale(1.03)}
-dialog{border:0;background:transparent;max-width:min(92vw,720px);padding:0;overflow:visible}
-dialog::backdrop{background:rgba(25,12,8,.88)}
-dialog img{max-height:84vh;width:auto;max-width:100%;margin:auto;border-radius:3px}
-dialog .x,dialog .nv{position:absolute;background:var(--cream);border:0;border-radius:50%;width:48px;height:48px;font-size:1.4rem;cursor:pointer}
-dialog .x{top:-1rem;right:-1rem}.nv.p{left:-1.5rem;top:45%}.nv.n{right:-1.5rem;top:45%}
-.order{background:var(--cocoa);color:var(--cream)}
-.order .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem)}
-.order .eyebrow{color:#f0a9b9}.order em{color:#f0a9b9}
-.order ol{padding:0;list-style:none;counter-reset:s;margin:1.5rem 0 2rem}
-.order li{counter-increment:s;padding:.9rem 0 .9rem 3rem;position:relative;border-bottom:1px solid rgba(255,255,255,.15)}
-.order li::before{content:counter(s);position:absolute;left:0;font:italic 1.5rem var(--serif);color:#f0a9b9}
-.order .btn.ghost{color:var(--cream);border-color:var(--cream)}
-.order .btn.ghost:hover{background:var(--cream);color:var(--cocoa)}
-.order .btn:not(.ghost){background:#fff;color:var(--berry);border-color:#fff}
-.order img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:3px}
-.info{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
-.info h3{font-size:1.4rem;margin-bottom:.6rem}
-.info a{color:var(--berry);font-weight:500}
-.ph{background:var(--blush);padding:.1rem .4rem;border-radius:2px;font-size:.9rem}
-footer{border-top:1px solid var(--line);padding:2.5rem 0 calc(2.5rem + env(safe-area-inset-bottom,0px));font-size:.92rem;color:var(--soft)}
-footer .wrap{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;align-items:center}
-footer ul{display:flex;gap:1.25rem;list-style:none;padding:0;flex-wrap:wrap}
-.rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
-.rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}*{transition:none!important}}
-@media(max-width:860px){
-.burger{display:block}
-nav ul{display:none;position:absolute;top:4.25rem;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--cream);border-bottom:1px solid var(--line);padding:.5rem 1.25rem 1.25rem}
-nav ul.open{display:flex}
-nav li a{display:block;padding:.85rem 0;border-bottom:1px solid var(--line)}
-nav li:last-child a{margin-top:1rem;text-align:center;border:0}
-.hero .wrap,.story .wrap,.order .wrap{grid-template-columns:1fr}
-.hero-img{order:-1;padding:0 0 1.75rem 1.25rem}
-.hero-img::before{inset:1.25rem 1.25rem 0 0}
-.hero-img .main{aspect-ratio:1/1;object-position:center 30%}
-.sig-grid{grid-template-columns:1fr 1fr}
-.c1,.c2,.c3,.c4,.c5,.c6{grid-column:auto;grid-row:auto}.c1{grid-column:span 2}
-.c1 img{aspect-ratio:1}
-.info{grid-template-columns:1fr}
-.order img{aspect-ratio:1}
-dialog .nv.p{left:.25rem}dialog .nv.n{right:.25rem}dialog .x{top:.25rem;right:.25rem}
-.brand small{display:none}
-}
-</style>
-</head>
-<body>
-<header><div class="wrap bar">
-<a class="brand" href="#top" aria-label="Patisserie Wong, accueil">Wong<small>Patisserie · Tamatave</small></a>
-<button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">☰</button>
-<nav aria-label="Navigation principale"><ul id="menu">
-<li><a href="#maison">La maison</a></li><li><a href="#creations">Créations</a></li><li><a href="#galerie">Galerie</a></li><li><a href="#commander">Commander</a></li><li><a href="#infos">Infos</a></li>
-<li><a class="btn" href="#commander">Commander</a></li></ul></nav>
-</div></header>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Patisserie Wong by chef Sasandy — Pâtisserie à Tamatave</title>
+    <meta
+      name="description"
+      content="Gâteaux traditionnels, modernes et personnalisés, cocktails et service traiteur à Tamatave. Patisserie Wong by chef Sasandy."
+    />
+    <meta property="og:title" content="Patisserie Wong — Tamatave" />
+    <meta
+      property="og:description"
+      content="Gâteaux personnalisés, gâteaux modernes et service traiteur pour tous vos événements."
+    />
+    <meta property="og:image" content="img/angela.jpg" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23b3213f'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle' fill='white' font-family='Georgia' font-style='italic'%3EW%3C/text%3E%3C/svg%3E"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap"
+    />
+    <style>
+      :root {
+        --cream: #fbf6ef;
+        --blush: #f4e3dc;
+        --cocoa: #2d1a14;
+        --soft: #6b564d;
+        --berry: #b3213f;
+        --berry-d: #8f1832;
+        --line: #e6d6cb;
+        --serif: "Fraunces", Georgia, "Times New Roman", serif;
+        --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          color-scheme: light;
+        }
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5rem;
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+      body {
+        background: var(--cream);
+        color: var(--cocoa);
+        font: 400 1.0625rem/1.65 var(--sans);
+        overflow-x: hidden;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      a {
+        color: inherit;
+      }
+      :focus-visible {
+        outline: 3px solid var(--berry);
+        outline-offset: 3px;
+      }
+      .wrap {
+        width: min(1180px, 100% - 2.5rem);
+        margin-inline: auto;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: var(--serif);
+        font-weight: 400;
+        line-height: 1.08;
+        letter-spacing: -0.015em;
+      }
+      h2 {
+        font-size: clamp(2rem, 4.5vw, 3.25rem);
+      }
+      em {
+        font-style: italic;
+        color: var(--berry);
+      }
+      .eyebrow {
+        font-size: 0.78rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: var(--berry);
+        margin-bottom: 1rem;
+      }
+      .btn {
+        display: inline-block;
+        padding: 0.9rem 1.6rem;
+        border-radius: 3px;
+        background: var(--berry);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        border: 1.5px solid var(--berry);
+        transition:
+          background 0.2s,
+          color 0.2s;
+        min-height: 48px;
+      }
+      .btn:hover {
+        background: var(--berry-d);
+      }
+      .btn.ghost {
+        background: transparent;
+        color: var(--cocoa);
+        border-color: var(--cocoa);
+      }
+      .btn.ghost:hover {
+        background: var(--cocoa);
+        color: var(--cream);
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(251, 246, 239, 0.96);
+        border-bottom: 1px solid var(--line);
+      }
+      .bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 4.25rem;
+        gap: 1rem;
+      }
+      .brand {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 1.65rem;
+        color: var(--berry);
+        text-decoration: none;
+      }
+      .brand small {
+        font: 500 0.62rem var(--sans);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--soft);
+        margin-left: 0.5rem;
+      }
+      nav ul {
+        display: flex;
+        gap: 1.75rem;
+        list-style: none;
+        padding: 0;
+        align-items: center;
+      }
+      nav a {
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+      nav a:hover {
+        color: var(--berry);
+      }
+      nav .btn {
+        padding: 0.55rem 1.1rem;
+        min-height: 0;
+        color: #fff;
+      }
+      nav .btn:hover {
+        color: #fff;
+      }
+      .burger {
+        display: none;
+        background: none;
+        border: 1px solid var(--line);
+        border-radius: 3px;
+        width: 48px;
+        height: 48px;
+        font: inherit;
+        cursor: pointer;
+      }
+      .hero {
+        padding: clamp(2rem, 6vw, 5rem) 0 clamp(3rem, 7vw, 6rem);
+      }
+      .hero .wrap {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: clamp(2rem, 5vw, 5rem);
+        align-items: center;
+      }
+      .hero h1 {
+        font-size: clamp(2.7rem, 6.6vw, 5.4rem);
+        margin-bottom: 1.5rem;
+      }
+      .hero p.lead {
+        font-size: 1.2rem;
+        color: var(--soft);
+        max-width: 30rem;
+        margin-bottom: 2rem;
+      }
+      .cta {
+        display: flex;
+        gap: 0.9rem;
+        flex-wrap: wrap;
+      }
+      .hero-img {
+        position: relative;
+        padding: 0 0 2.5rem 2.5rem;
+      }
+      .hero-img::before {
+        content: "";
+        position: absolute;
+        inset: 2.5rem 2.5rem 0 0;
+        background: var(--blush);
+        border-radius: 3px;
+      }
+      .hero-img .main {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 4/5;
+        object-fit: cover;
+        border-radius: 3px;
+        box-shadow: 0 18px 40px -22px rgba(45, 26, 20, 0.5);
+      }
+      .hero-img .inset {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 38%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border: 6px solid var(--cream);
+        border-radius: 3px;
+      }
+      section {
+        padding: clamp(3.5rem, 8vw, 7rem) 0;
+      }
+      .story .wrap {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: clamp(2rem, 6vw, 6rem);
+        align-items: center;
+      }
+      .story img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 3px;
+      }
+      .story p {
+        color: var(--soft);
+        margin-top: 1.25rem;
+        max-width: 34rem;
+      }
+      .services {
+        list-style: none;
+        padding: 0;
+        margin-top: 1.75rem;
+        border-top: 1px solid var(--line);
+      }
+      .services li {
+        padding: 0.8rem 0;
+        border-bottom: 1px solid var(--line);
+        font-family: var(--serif);
+        font-size: 1.25rem;
+      }
+      .services span {
+        font: 400 0.9rem var(--sans);
+        color: var(--soft);
+        display: block;
+      }
+      .sig {
+        background: var(--blush);
+      }
+      .sig header,
+      .head {
+        max-width: 36rem;
+        margin-bottom: 2.5rem;
+      }
+      .sig-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1.25rem;
+      }
+      .card {
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+        border-radius: 3px;
+        background: #fff;
+      }
+      .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 1;
+      }
+      .card figcaption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 2.5rem 1rem 0.9rem;
+        color: #fff;
+        font-size: 0.9rem;
+        background: linear-gradient(transparent, rgba(45, 26, 20, 0.72));
+      }
+      .c1 {
+        grid-column: span 7;
+        grid-row: span 2;
+      }
+      .c1 img {
+        aspect-ratio: auto;
+      }
+      .c2,
+      .c3 {
+        grid-column: span 5;
+      }
+      .c4,
+      .c5,
+      .c6 {
+        grid-column: span 4;
+      }
+      .gallery-grid {
+        columns: 4 220px;
+        column-gap: 1rem;
+      }
+      .gallery-grid button {
+        display: block;
+        width: 100%;
+        padding: 0;
+        border: 0;
+        background: none;
+        margin-bottom: 1rem;
+        cursor: zoom-in;
+        break-inside: avoid;
+        border-radius: 3px;
+        overflow: hidden;
+      }
+      .gallery-grid img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s;
+      }
+      .gallery-grid button:hover img {
+        transform: scale(1.03);
+      }
+      dialog {
+        border: 0;
+        background: transparent;
+        max-width: min(92vw, 720px);
+        padding: 0;
+        overflow: visible;
+      }
+      dialog::backdrop {
+        background: rgba(25, 12, 8, 0.88);
+      }
+      dialog img {
+        max-height: 84vh;
+        width: auto;
+        max-width: 100%;
+        margin: auto;
+        border-radius: 3px;
+      }
+      dialog .x,
+      dialog .nv {
+        position: absolute;
+        background: var(--cream);
+        border: 0;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        font-size: 1.4rem;
+        cursor: pointer;
+      }
+      dialog .x {
+        top: -1rem;
+        right: -1rem;
+      }
+      .nv.p {
+        left: -1.5rem;
+        top: 45%;
+      }
+      .nv.n {
+        right: -1.5rem;
+        top: 45%;
+      }
+      .order {
+        background: var(--cocoa);
+        color: var(--cream);
+      }
+      .order .wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(2rem, 6vw, 6rem);
+      }
+      .order .eyebrow {
+        color: #f0a9b9;
+      }
+      .order em {
+        color: #f0a9b9;
+      }
+      .order ol {
+        padding: 0;
+        list-style: none;
+        counter-reset: s;
+        margin: 1.5rem 0 2rem;
+      }
+      .order li {
+        counter-increment: s;
+        padding: 0.9rem 0 0.9rem 3rem;
+        position: relative;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      }
+      .order li::before {
+        content: counter(s);
+        position: absolute;
+        left: 0;
+        font: italic 1.5rem var(--serif);
+        color: #f0a9b9;
+      }
+      .order .btn.ghost {
+        color: var(--cream);
+        border-color: var(--cream);
+      }
+      .order .btn.ghost:hover {
+        background: var(--cream);
+        color: var(--cocoa);
+      }
+      .order .btn:not(.ghost) {
+        background: #fff;
+        color: var(--berry);
+        border-color: #fff;
+      }
+      .order img {
+        width: 100%;
+        aspect-ratio: 4/5;
+        object-fit: cover;
+        border-radius: 3px;
+      }
+      .info {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+      .info h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.6rem;
+      }
+      .info a {
+        color: var(--berry);
+        font-weight: 500;
+      }
+      .ph {
+        background: var(--blush);
+        padding: 0.1rem 0.4rem;
+        border-radius: 2px;
+        font-size: 0.9rem;
+      }
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 2.5rem 0 calc(2.5rem + env(safe-area-inset-bottom, 0px));
+        font-size: 0.92rem;
+        color: var(--soft);
+      }
+      footer .wrap {
+        display: flex;
+        justify-content: space-between;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      footer ul {
+        display: flex;
+        gap: 1.25rem;
+        list-style: none;
+        padding: 0;
+        flex-wrap: wrap;
+      }
+      .rv {
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity 0.7s,
+          transform 0.7s;
+      }
+      .rv.in {
+        opacity: 1;
+        transform: none;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .rv {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+        * {
+          transition: none !important;
+        }
+      }
+      @media (max-width: 860px) {
+        .burger {
+          display: block;
+        }
+        nav ul {
+          display: none;
+          position: absolute;
+          top: 4.25rem;
+          left: 0;
+          right: 0;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 0;
+          background: var(--cream);
+          border-bottom: 1px solid var(--line);
+          padding: 0.5rem 1.25rem 1.25rem;
+        }
+        nav ul.open {
+          display: flex;
+        }
+        nav li a {
+          display: block;
+          padding: 0.85rem 0;
+          border-bottom: 1px solid var(--line);
+        }
+        nav li:last-child a {
+          margin-top: 1rem;
+          text-align: center;
+          border: 0;
+        }
+        .hero .wrap,
+        .story .wrap,
+        .order .wrap {
+          grid-template-columns: 1fr;
+        }
+        .hero-img {
+          order: -1;
+          padding: 0 0 1.75rem 1.25rem;
+        }
+        .hero-img::before {
+          inset: 1.25rem 1.25rem 0 0;
+        }
+        .hero-img .main {
+          aspect-ratio: 1/1;
+          object-position: center 30%;
+        }
+        .sig-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .c1,
+        .c2,
+        .c3,
+        .c4,
+        .c5,
+        .c6 {
+          grid-column: auto;
+          grid-row: auto;
+        }
+        .c1 {
+          grid-column: span 2;
+        }
+        .c1 img {
+          aspect-ratio: 1;
+        }
+        .info {
+          grid-template-columns: 1fr;
+        }
+        .order img {
+          aspect-ratio: 1;
+        }
+        dialog .nv.p {
+          left: 0.25rem;
+        }
+        dialog .nv.n {
+          right: 0.25rem;
+        }
+        dialog .x {
+          top: 0.25rem;
+          right: 0.25rem;
+        }
+        .brand small {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap bar">
+        <a class="brand" href="#top" aria-label="Patisserie Wong, accueil"
+          >Wong<small>Patisserie · Tamatave</small></a
+        >
+        <button
+          class="burger"
+          aria-expanded="false"
+          aria-controls="menu"
+          aria-label="Ouvrir le menu"
+        >
+          ☰
+        </button>
+        <nav aria-label="Navigation principale">
+          <ul id="menu">
+            <li><a href="#maison">La maison</a></li>
+            <li><a href="#creations">Créations</a></li>
+            <li><a href="#galerie">Galerie</a></li>
+            <li><a href="#commander">Commander</a></li>
+            <li><a href="#infos">Infos</a></li>
+            <li><a class="btn" href="#commander">Commander</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-<main id="top">
-<div class="hero"><div class="wrap">
-<div>
-<p class="eyebrow">Patisserie Wong · by chef Sasandy</p>
-<h1>Le gâteau qui donne à votre fête <em>son visage.</em></h1>
-<p class="lead">Gâteaux traditionnels, modernes et entièrement personnalisés, préparés à Tamatave pour vos anniversaires, mariages et célébrations.</p>
-<div class="cta"><a class="btn" href="#commander">Commander un gâteau</a><a class="btn ghost" href="#creations">Découvrir les créations</a></div>
-</div>
-<div class="hero-img">
-<img class="main" src="img/angela.jpg" width="472" height="590" alt="Gâteau d'anniversaire à deux étages, décoré de roses pêche et de lettrage doré">
-<img class="inset" src="img/rouge.jpg" width="413" height="414" alt="Entremets au glaçage rouge, ornés d'une rose" loading="lazy">
-</div></div></div>
+    <main id="top">
+      <div class="hero">
+        <div class="wrap">
+          <div>
+            <p class="eyebrow">Patisserie Wong · by chef Sasandy</p>
+            <h1>Le gâteau qui donne à votre fête <em>son visage.</em></h1>
+            <p class="lead">
+              Gâteaux traditionnels, modernes et entièrement personnalisés,
+              préparés à Tamatave pour vos anniversaires, mariages et
+              célébrations.
+            </p>
+            <div class="cta">
+              <a class="btn" href="#commander">Commander un gâteau</a
+              ><a class="btn ghost" href="#creations"
+                >Découvrir les créations</a
+              >
+            </div>
+          </div>
+          <div class="hero-img">
+            <img
+              class="main"
+              src="img/angela.jpg"
+              width="472"
+              height="590"
+              alt="Gâteau d'anniversaire à deux étages, décoré de roses pêche et de lettrage doré"
+            />
+            <img
+              class="inset"
+              src="img/rouge.jpg"
+              width="413"
+              height="414"
+              alt="Entremets au glaçage rouge, ornés d'une rose"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
 
-<section id="maison" class="story"><div class="wrap">
-<img class="rv" src="img/fraise.jpg" width="414" height="414" alt="Biscuit aux fraises fraîches et crème chantilly" loading="lazy">
-<div class="rv">
-<p class="eyebrow">La maison</p>
-<h2>Une pâtisserie à Tamatave, <em>signée chef Sasandy.</em></h2>
-<p>Patisserie Wong propose des gâteaux pour chaque occasion : de la recette traditionnelle à la création sur mesure, avec un service traiteur pour accompagner vos événements.</p>
-<ul class="services">
-<li>Gâteaux traditionnels</li><li>Gâteaux modernes</li><li>Gâteaux personnalisés</li><li>Cocktail</li>
-<li>Service traiteur<span>Mariage, fiançailles, anniversaire, baby shower…</span></li></ul>
-</div></div></section>
+      <section id="maison" class="story">
+        <div class="wrap">
+          <img
+            class="rv"
+            src="img/fraise.jpg"
+            width="414"
+            height="414"
+            alt="Biscuit aux fraises fraîches et crème chantilly"
+            loading="lazy"
+          />
+          <div class="rv">
+            <p class="eyebrow">La maison</p>
+            <h2>Une pâtisserie à Tamatave, <em>signée chef Sasandy.</em></h2>
+            <p>
+              Patisserie Wong propose des gâteaux pour chaque occasion : de la
+              recette traditionnelle à la création sur mesure, avec un service
+              traiteur pour accompagner vos événements.
+            </p>
+            <ul class="services">
+              <li>Gâteaux traditionnels</li>
+              <li>Gâteaux modernes</li>
+              <li>Gâteaux personnalisés</li>
+              <li>Cocktail</li>
+              <li>
+                Service traiteur<span
+                  >Mariage, fiançailles, anniversaire, baby shower…</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-<section id="creations" class="sig"><div class="wrap">
-<div class="head"><p class="eyebrow">Créations</p><h2>Des gâteaux faits <em>à votre histoire</em></h2></div>
-<div class="sig-grid">
-<figure class="card c1 rv"><img src="img/minecraft.jpg" width="590" height="590" alt="Gâteau Minecraft vert avec figurines et épées" loading="lazy"><figcaption>Univers jeu vidéo, sur mesure</figcaption></figure>
-<figure class="card c2 rv"><img src="img/licorne.jpg" width="590" height="590" alt="Gâteau licorne avec glaçage rose, papillons et arc-en-ciel" loading="lazy"><figcaption>Licorne &amp; arc-en-ciel</figcaption></figure>
-<figure class="card c3 rv"><img src="img/roses.jpg" width="590" height="590" alt="Gâteau rose orné de roses, cœurs dorés et feuille d'or" loading="lazy"><figcaption>Roses &amp; feuille d'or</figcaption></figure>
-<figure class="card c4 rv"><img src="img/guitare.jpg" width="590" height="590" alt="Gâteau musique avec guitare et notes dorées" loading="lazy"><figcaption>Musique</figcaption></figure>
-<figure class="card c5 rv"><img src="img/cupcakes.jpg" width="310" height="414" alt="Petit gâteau et cupcakes à la crème rose" loading="lazy"><figcaption>Cupcakes</figcaption></figure>
-<figure class="card c6 rv"><img src="img/plage.jpg" width="590" height="590" alt="Gâteau bleu océan décoré de coquillages dorés" loading="lazy"><figcaption>Océan &amp; coquillages</figcaption></figure>
-</div></div></section>
+      <section id="creations" class="sig">
+        <div class="wrap">
+          <div class="head">
+            <p class="eyebrow">Créations</p>
+            <h2>Des gâteaux faits <em>à votre histoire</em></h2>
+          </div>
+          <div class="sig-grid">
+            <figure class="card c1 rv">
+              <img
+                src="img/minecraft.jpg"
+                width="590"
+                height="590"
+                alt="Gâteau Minecraft vert avec figurines et épées"
+                loading="lazy"
+              />
+              <figcaption>Univers jeu vidéo, sur mesure</figcaption>
+            </figure>
+            <figure class="card c2 rv">
+              <img
+                src="img/licorne.jpg"
+                width="590"
+                height="590"
+                alt="Gâteau licorne avec glaçage rose, papillons et arc-en-ciel"
+                loading="lazy"
+              />
+              <figcaption>Licorne &amp; arc-en-ciel</figcaption>
+            </figure>
+            <figure class="card c3 rv">
+              <img
+                src="img/roses.jpg"
+                width="590"
+                height="590"
+                alt="Gâteau rose orné de roses, cœurs dorés et feuille d'or"
+                loading="lazy"
+              />
+              <figcaption>Roses &amp; feuille d'or</figcaption>
+            </figure>
+            <figure class="card c4 rv">
+              <img
+                src="img/guitare.jpg"
+                width="590"
+                height="590"
+                alt="Gâteau musique avec guitare et notes dorées"
+                loading="lazy"
+              />
+              <figcaption>Musique</figcaption>
+            </figure>
+            <figure class="card c5 rv">
+              <img
+                src="img/cupcakes.jpg"
+                width="310"
+                height="414"
+                alt="Petit gâteau et cupcakes à la crème rose"
+                loading="lazy"
+              />
+              <figcaption>Cupcakes</figcaption>
+            </figure>
+            <figure class="card c6 rv">
+              <img
+                src="img/plage.jpg"
+                width="590"
+                height="590"
+                alt="Gâteau bleu océan décoré de coquillages dorés"
+                loading="lazy"
+              />
+              <figcaption>Océan &amp; coquillages</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
 
-<section id="galerie"><div class="wrap">
-<div class="head"><p class="eyebrow">Galerie</p><h2>Quelques-unes de nos <em>réalisations</em></h2></div>
-<div class="gallery-grid" id="gal">
-<button><img src="img/sonic.jpg" width="590" height="590" alt="Gâteau Sonic bleu avec personnages et anneaux dorés" loading="lazy"></button>
-<button><img src="img/maman.jpg" width="413" height="414" alt="Gâteau crème orné d'un dessin mère et enfant et de roses" loading="lazy"></button>
-<button><img src="img/playstation.jpg" width="590" height="590" alt="Gâteau bleu PlayStation avec manette" loading="lazy"></button>
-<button><img src="img/perles.jpg" width="414" height="414" alt="Gâteau rose et blanc à deux étages avec roses et perles" loading="lazy"></button>
-<button><img src="img/reggae.jpg" width="414" height="414" alt="Gâteau reggae aux couleurs vert, jaune et rouge" loading="lazy"></button>
-<button><img src="img/sport.jpg" width="590" height="590" alt="Gâteau musculation avec haltères" loading="lazy"></button>
-<button><img src="img/coqs.jpg" width="414" height="414" alt="Gâteau d'anniversaire avec coqs et pelouse en crème" loading="lazy"></button>
-<button><img src="img/rouge.jpg" width="413" height="414" alt="Rangée d'entremets rouges avec roses" loading="lazy"></button>
-</div></div></section>
+      <section id="galerie">
+        <div class="wrap">
+          <div class="head">
+            <p class="eyebrow">Galerie</p>
+            <h2>Quelques-unes de nos <em>réalisations</em></h2>
+          </div>
+          <div class="gallery-grid" id="gal">
+            <button>
+              <img
+                src="img/sonic.jpg"
+                width="590"
+                height="590"
+                alt="Gâteau Sonic bleu avec personnages et anneaux dorés"
+                loading="lazy"
+              />
+            </button>
+            <button>
+              <img
+                src="img/maman.jpg"
+                width="413"
+                height="414"
+                alt="Gâteau crème orné d'un dessin mère et enfant et de roses"
+                loading="lazy"
+              />
+            </button>
+            <button>
+              <img
+                src="img/playstation.jpg"
+                width="590"
+                height="590"
+                alt="Gâteau bleu PlayStation avec manette"
+                loading="lazy"
+              />
+            </button>
+            <button>
+              <img
+                src="img/perles.jpg"
+                width="414"
+                height="414"
+                alt="Gâteau rose et blanc à deux étages avec roses et perles"
+                loading="lazy"
+              />
+            </button>
+            <button>
+              <img
+                src="img/reggae.jpg"
+                width="414"
+                height="414"
+                alt="Gâteau reggae aux couleurs vert, jaune et rouge"
+                loading="lazy"
+              />
+            </button>
+            <button>
+              <img
+                src="img/sport.jpg"
+                width="590"
+                height="590"
+                alt="Gâteau musculation avec haltères"
+                loading="lazy"
+              />
+            </button>
+            <button>
+              <img
+                src="img/coqs.jpg"
+                width="414"
+                height="414"
+                alt="Gâteau d'anniversaire avec coqs et pelouse en crème"
+                loading="lazy"
+              />
+            </button>
+            <button>
+              <img
+                src="img/rouge.jpg"
+                width="413"
+                height="414"
+                alt="Rangée d'entremets rouges avec roses"
+                loading="lazy"
+              />
+            </button>
+          </div>
+        </div>
+      </section>
 
-<section id="commander" class="order"><div class="wrap">
-<div class="rv">
-<p class="eyebrow">Commander</p>
-<h2>Parlons de votre <em>prochain gâteau</em></h2>
-<ol><li>Dites-nous l'occasion et le thème souhaité.</li><li>Indiquez le nombre de personnes.</li><li>Précisez la date de retrait ou de livraison.</li><li>Envoyez une photo d'inspiration si vous en avez une.</li></ol>
-<div class="cta"><a class="btn" href="tel:+261344590025">Appeler le 034 45 900 25</a><a class="btn ghost" href="https://www.facebook.com/search/top?q=Patisserie%20Wong%20Tamatave" target="_blank" rel="noopener">Écrire sur Facebook</a></div>
-</div>
-<img class="rv" src="img/angela.jpg" width="472" height="590" alt="Gâteau à deux étages décoré de roses et de lettrage doré" loading="lazy">
-</div></section>
+      <section id="commander" class="order">
+        <div class="wrap">
+          <div class="rv">
+            <p class="eyebrow">Commander</p>
+            <h2>Parlons de votre <em>prochain gâteau</em></h2>
+            <ol>
+              <li>Dites-nous l'occasion et le thème souhaité.</li>
+              <li>Indiquez le nombre de personnes.</li>
+              <li>Précisez la date de retrait ou de livraison.</li>
+              <li>Envoyez une photo d'inspiration si vous en avez une.</li>
+            </ol>
+            <div class="cta">
+              <a class="btn" href="tel:+261344590025"
+                >Appeler le 034 XX XXX XX</a
+              ><a
+                class="btn ghost"
+                href="https://www.facebook.com/search/top?q=Patisserie%20Wong%20Tamatave"
+                target="_blank"
+                rel="noopener"
+                >Écrire sur Facebook</a
+              >
+            </div>
+          </div>
+          <img
+            class="rv"
+            src="img/angela.jpg"
+            width="472"
+            height="590"
+            alt="Gâteau à deux étages décoré de roses et de lettrage doré"
+            loading="lazy"
+          />
+        </div>
+      </section>
 
-<section id="infos"><div class="wrap">
-<div class="head"><p class="eyebrow">Nous trouver</p><h2>Passez à <em>la boutique</em></h2></div>
-<div class="info">
-<div><h3>Adresse</h3><p>Salazamay Sud, Tamatave<br><a href="https://www.google.com/maps/search/?api=1&query=Salazamay+Sud+Tamatave" target="_blank" rel="noopener">Voir sur la carte</a></p></div>
-<div><h3>Contact</h3><p><a href="tel:+261344590025">034 45 900 25</a><br><span class="ph">2e numéro à confirmer</span></p></div>
-<div><h3>Suivez les nouveautés</h3><p>Nouvelles créations et nouveautés en boutique sont publiées sur Facebook.<br><a href="https://www.facebook.com/search/top?q=Patisserie%20Wong%20Tamatave" target="_blank" rel="noopener">Patisserie Wong - Tamatave</a></p><p style="margin-top:.6rem"><span class="ph">Horaires : à renseigner</span></p></div>
-</div></div></section>
-</main>
+      <section id="infos">
+        <div class="wrap">
+          <div class="head">
+            <p class="eyebrow">Nous trouver</p>
+            <h2>Passez à <em>la boutique</em></h2>
+          </div>
+          <div class="info">
+            <div>
+              <h3>Adresse</h3>
+              <p>
+                Salazamay Sud, Tamatave<br /><a
+                  href="https://www.google.com/maps/search/?api=1&query=Salazamay+Sud+Tamatave"
+                  target="_blank"
+                  rel="noopener"
+                  >Voir sur la carte</a
+                >
+              </p>
+            </div>
+            <div>
+              <h3>Contact</h3>
+              <p><a href="tel:+261344590025">034 XX XXX XX</a><br /></p>
+            </div>
+            <div>
+              <h3>Suivez les nouveautés</h3>
+              <p>
+                Nouvelles créations et nouveautés en boutique sont publiées sur
+                Facebook.<br /><a
+                  href="https://www.facebook.com/sandra.wonglanesylla"
+                  target="_blank"
+                  rel="noopener"
+                  >Patisserie Wong - Tamatave</a
+                >
+              </p>
+              <p style="margin-top: 0.6rem">
+                <span class="ph">9h à 18h</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-<footer><div class="wrap">
-<div><span class="brand">Wong</span> <span>by chef Sasandy · Tamatave</span></div>
-<ul><li><a href="#creations">Créations</a></li><li><a href="#galerie">Galerie</a></li><li><a href="#commander">Commander</a></li><li><a href="#infos">Infos</a></li></ul>
-<p>© <span id="y">2026</span> Patisserie Wong</p>
-</div></footer>
+    <footer>
+      <div class="wrap">
+        <div>
+          <span class="brand">Wong</span>
+          <span>by chef Sasandy · Tamatave</span>
+        </div>
+        <ul>
+          <li><a href="#creations">Créations</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#commander">Commander</a></li>
+          <li><a href="#infos">Infos</a></li>
+        </ul>
+        <p>© <span id="y">2026</span> Patisserie Wong</p>
+      </div>
+    </footer>
 
-<dialog id="lb" aria-label="Agrandissement de la photo"><button class="x" aria-label="Fermer">×</button><button class="nv p" aria-label="Photo précédente">‹</button><img alt=""><button class="nv n" aria-label="Photo suivante">›</button></dialog>
+    <dialog id="lb" aria-label="Agrandissement de la photo">
+      <button class="x" aria-label="Fermer">×</button
+      ><button class="nv p" aria-label="Photo précédente">‹</button
+      ><img alt="" /><button class="nv n" aria-label="Photo suivante">›</button>
+    </dialog>
 
-<script>
-const $=s=>document.querySelector(s),b=$('.burger'),m=$('#menu');
-b.onclick=()=>{const o=m.classList.toggle('open');b.setAttribute('aria-expanded',o);b.textContent=o?'✕':'☰'};
-m.onclick=e=>{if(e.target.tagName==='A'){m.classList.remove('open');b.setAttribute('aria-expanded',false);b.textContent='☰'}};
-const imgs=[...document.querySelectorAll('#gal img')],lb=$('#lb'),li=lb.querySelector('img');let i=0,from;
-const show=n=>{i=(n+imgs.length)%imgs.length;li.src=imgs[i].src;li.alt=imgs[i].alt};
-imgs.forEach((im,n)=>im.parentElement.onclick=e=>{from=e.currentTarget;show(n);lb.showModal()});
-lb.querySelector('.x').onclick=()=>lb.close();
-lb.querySelector('.p').onclick=()=>show(i-1);lb.querySelector('.n').onclick=()=>show(i+1);
-lb.onclick=e=>{if(e.target===lb)lb.close()};lb.onclose=()=>from&&from.focus();
-lb.onkeydown=e=>{if(e.key==='ArrowLeft')show(i-1);if(e.key==='ArrowRight')show(i+1)};
-$('#y').textContent=new Date().getFullYear();
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-</script>
-</body>
+    <script>
+      const $ = (s) => document.querySelector(s),
+        b = $(".burger"),
+        m = $("#menu");
+      b.onclick = () => {
+        const o = m.classList.toggle("open");
+        b.setAttribute("aria-expanded", o);
+        b.textContent = o ? "✕" : "☰";
+      };
+      m.onclick = (e) => {
+        if (e.target.tagName === "A") {
+          m.classList.remove("open");
+          b.setAttribute("aria-expanded", false);
+          b.textContent = "☰";
+        }
+      };
+      const imgs = [...document.querySelectorAll("#gal img")],
+        lb = $("#lb"),
+        li = lb.querySelector("img");
+      let i = 0,
+        from;
+      const show = (n) => {
+        i = (n + imgs.length) % imgs.length;
+        li.src = imgs[i].src;
+        li.alt = imgs[i].alt;
+      };
+      imgs.forEach(
+        (im, n) =>
+          (im.parentElement.onclick = (e) => {
+            from = e.currentTarget;
+            show(n);
+            lb.showModal();
+          }),
+      );
+      lb.querySelector(".x").onclick = () => lb.close();
+      lb.querySelector(".p").onclick = () => show(i - 1);
+      lb.querySelector(".n").onclick = () => show(i + 1);
+      lb.onclick = (e) => {
+        if (e.target === lb) lb.close();
+      };
+      lb.onclose = () => from && from.focus();
+      lb.onkeydown = (e) => {
+        if (e.key === "ArrowLeft") show(i - 1);
+        if (e.key === "ArrowRight") show(i + 1);
+      };
+      $("#y").textContent = new Date().getFullYear();
+      const io = new IntersectionObserver(
+        (es) =>
+          es.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          }),
+        { threshold: 0.12 },
+      );
+      document.querySelectorAll(".rv").forEach((el) => io.observe(el));
+    </script>
+  </body>
 </html>
